@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 const Loader = ({ setLoading }) => {
     return (
         <div className='min-h-screen flex justify-center items-center'>
-            <div className='border w-1/3 overflow-hidden'>
+            <div className='border w-4/5 sm:w-1/3 overflow-hidden'>
                 <motion.img
                     layoutId='hero-image'
                     src="/images/hero-image.jpg"

@@ -9,7 +9,7 @@ const Hero = () => {
             <div className='min-h-[calc(100vh_-_56px)] flex items-center relative'>
                 <h1 className='text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] leading-none font-semibold'>
                     <div className='grid grid-cols-6 grid-rows-2 sm:gap-y-4 relative z-10'>
-                        <StaggerParagraph className="col-start-2 sm:col-start-2 col-span-6 sm:col-span-4 text-nowrap">
+                        <StaggerParagraph className="col-start-2 sm:col-start-1 col-span-6 sm:col-span-4 text-nowrap">
                             let's talk
                         </StaggerParagraph>
                         <StaggerWords className="text-xs font-medium self-center hidden sm:block">

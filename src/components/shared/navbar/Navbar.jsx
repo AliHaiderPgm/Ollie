@@ -40,15 +40,6 @@ const MobileNav = () => {
     const isMobile = useMediaQuery({ query: '(max-width: 400px)' })
     const controls = useAnimation()
     const DrawerVariant = {
-        visible: {
-            height: 'calc(100vh - 49.33px)',
-            width: isMobile ? '100%' : '50%',
-            transition: {
-                when: 'beforeChildren',
-                staggerChildren: 0.1,
-                duration: 0.3,
-            }
-        },
         hidden: {
             height: isMobile ? '0%' : 'calc(100vh - 49.33px)',
             width: isMobile ? '100%' : '0%',
@@ -58,17 +49,26 @@ const MobileNav = () => {
                 staggerDirection: -1,
                 duration: 0.3,
             }
-        }
+        },
+        visible: {
+            height: 'calc(100vh - 49.33px)',
+            width: isMobile ? '100%' : '50%',
+            transition: {
+                when: 'beforeChildren',
+                staggerChildren: 0.1,
+                duration: 0.3,
+            }
+        },
     }
     const DrawerChild = {
+        hidden: {
+            y: 50,
+            opacity: 0,
+        },
         visible: {
             y: 0,
             opacity: 1,
         },
-        hidden: {
-            y: 50,
-            opacity: 0,
-        }
     }
 
     const handleMenu = () => {
@@ -85,7 +85,7 @@ const MobileNav = () => {
                 {isOpen ? 'x' : '/'}
             </button>
             <motion.div
-                initial={{ width: '0%' }}
+                initial={{ width: isMobile ? '100%' : '0%', height: isMobile ? '0%' : 'calc(100vh - 49.33px)' }}
                 animate={controls}
                 variants={DrawerVariant}
                 className='absolute right-0 top-full flex flex-col items-center h-[calc(100vh_-_49.33px)] overflow-hidden border backdrop-blur-lg z-50'
@@ -93,6 +93,10 @@ const MobileNav = () => {
                 {
                     NavList.map((item) => {
                         return <motion.a
+                            initial={{
+                                y: 50,
+                                opacity: 0,
+                            }}
                             variants={DrawerChild}
                             className='px-3 py-2 text-lg focus:underline'
                             href={item.href}
