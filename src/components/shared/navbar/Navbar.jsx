@@ -17,13 +17,13 @@ const DesktopNav = () => {
         initial={{ y: '-110%' }}
         animate={{ y: '0%' }}
         transition={{ delay: 0.05, duration: 0.6, ease: 'easeInOut' }}
-        className='flex justify-between items-center px-6 py-2 backdrop-blur-lg'
+        className='flex justify-between items-center px-6 py-2 sticky top-0 z-50 mix-blend-difference'
     >
-        <a href="#" className='text-2xl font-bold'>Ollie</a>
+        <a href="#" className='text-2xl font-bold text-white'>Ollie</a>
         <div onMouseLeave={() => setHoverTab(null)} className='flex'>
             {
                 NavList.map(item => {
-                    return <a className='px-3 py-2 relative text-base' href={item.href} key={item.id} onClick={() => setActiveTab(item)} onMouseEnter={() => setHoverTab(item)}>
+                    return <a className='px-3 py-2 relative text-base text-white' href={item.href} key={item.id} onClick={() => setActiveTab(item)} onMouseEnter={() => setHoverTab(item)}>
                         {item.text}
                         {activeTab.id === item.id ? <motion.div layoutId='underline' transition={{ ease: 'easeInOut' }} className='h-px w-full bg-black absolute bottom-0 left-0' /> : null}
                         {hoverTab === item ? <motion.div layoutId='hover-bg' className='absolute inset-0 -z-10 bg-gray-500/10' /> : null}
@@ -31,7 +31,7 @@ const DesktopNav = () => {
                 })
             }
         </div>
-        <a href="#" className='hover:bg-gray-500/10 underline underline-offset-8 px-3 py-2 duration-300 hidden md:block'>Let's work together</a>
+        <a href="#" className='hover:bg-gray-500/10 underline underline-offset-8 px-3 py-2 duration-300 hidden md:block text-white'>Let's work together</a>
     </motion.div>
 }
 

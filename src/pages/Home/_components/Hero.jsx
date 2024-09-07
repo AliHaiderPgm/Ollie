@@ -1,14 +1,15 @@
 import React from 'react'
 import { StaggerLetters, StaggerParagraph, StaggerWords } from '../../../components/shared/Stagger'
 import { motion } from 'framer-motion'
+import ToolTip from '../../../components/shared/ToolTip'
 
 
 const Hero = () => {
     return (
-        <div className='relative overflow-hidden max-w-[1500px] mx-auto'>
+        <div className='relative max-w-[1500px] mx-auto'>
             <div className='min-h-[calc(100vh_-_56px)] flex items-center relative'>
                 <h1 className='text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] leading-none font-semibold'>
-                    <div className='grid grid-cols-6 grid-rows-2 sm:gap-y-4 relative z-10'>
+                    <div className='grid grid-cols-6 grid-rows-2 sm:gap-y-4 relative z-10 text-black'>
                         <StaggerParagraph className="col-start-2 sm:col-start-1 col-span-6 sm:col-span-4 text-nowrap">
                             let's talk
                         </StaggerParagraph>
@@ -20,10 +21,11 @@ const Hero = () => {
                         </StaggerLetters>
                     </div>
                 </h1>
+                <div className='absolute z-[11] top-2/3 sm:top-1/2 left-1/2 -translate-x-1/2 sm:translate-x-0'>
+                    <ToolTip title="Why do you need good design? 👇" />
+                </div>
             </div>
-            <div className='md:w-3/4 absolute top-[60%] sm:top-2/3'>
-                <motion.img layoutId='hero-image' transition={{ layout: { duration: 1, ease: 'linear' } }} src="/images/hero-image.jpg" alt="" />
-            </div>
+            <motion.img layoutId='hero-image' className='absolute top-2/3' width={900} transition={{ layout: { duration: 1, ease: 'linear' } }} src="/images/hero-image.jpg" alt="yellow sofa" />
         </div>
     )
 }

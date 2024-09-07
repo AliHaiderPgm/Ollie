@@ -6,7 +6,14 @@ export default {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'offWhite': '#F5F5F5',
+      },
+      width: {
+        'xs': '400px'
+      }
+    },
   },
   plugins: [],
 }
