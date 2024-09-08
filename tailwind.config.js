@@ -8,7 +8,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        'offWhite': '#F5F5F5',
+        'offWhite': {
+          50: '#efefef33',
+          900: '#efefef'
+        },
       },
       width: {
         'xs': '400px'

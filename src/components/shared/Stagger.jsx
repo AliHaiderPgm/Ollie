@@ -1,17 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { letterVariants } from '../constant/letterVariants'
 
-const letterAnimation = {
-    hidden: { y: '150%' },
-    show: i => ({
-        y: 0,
-        transition: {
-            delay: i * 0.07,
-            duration: 0.7,
-            ease: 'easeInOut',
-        }
-    })
-}
 
 export const StaggerLetters = ({ children, className }) => {
     const lettersArr = children.split('')
@@ -22,7 +12,7 @@ export const StaggerLetters = ({ children, className }) => {
                 return <motion.span
                     initial="hidden"
                     animate="show"
-                    variants={letterAnimation}
+                    variants={letterVariants}
                     custom={i}
                     className='inline-block'
                     key={i}
@@ -43,7 +33,7 @@ export const StaggerWords = ({ children, className }) => {
                     <motion.span
                         initial="hidden"
                         animate="show"
-                        variants={letterAnimation}
+                        variants={letterVariants}
                         custom={4}
                         className='inline-block'
                     >
@@ -67,7 +57,7 @@ export const StaggerParagraph = ({ children, className }) => {
                             return <motion.span
                                 initial="hidden"
                                 animate="show"
-                                variants={letterAnimation}
+                                variants={letterVariants}
                                 custom={i}
                                 className='inline-block'
                                 key={i}

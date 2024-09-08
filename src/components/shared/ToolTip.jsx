@@ -33,7 +33,7 @@ const ToolTip = ({ title }) => {
             initial="hidden"
             animate={tipControls}
             variants={bgVariants}
-            className='bg-white rounded-full overflow-hidden relative z-[49] px-8 py-4'
+            className='bg-white rounded-full overflow-hidden relative z-[49] px-8 py-4 hidden sm:block'
         >
             <motion.p
                 variants={pVariants}
