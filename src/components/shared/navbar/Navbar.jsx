@@ -17,7 +17,7 @@ const DesktopNav = () => {
         initial={{ y: 'calc(-100% - 0.5rem)' }}
         animate={{ y: '0%' }}
         transition={{ delay: 0.05, duration: .6, ease: 'easeInOut' }}
-        className='flex justify-between items-center px-6 py-2 sticky top-0 z-50 backdrop-blur-md bg-offWhite-50'
+        className='flex justify-between items-center px-6 py-2 z-50 backdrop-blur-md bg-offWhite-50'
     >
         <a href="#" className='text-2xl font-bold'>Ollie</a>
         <div onMouseLeave={() => setHoverTab(null)} className='flex'>
