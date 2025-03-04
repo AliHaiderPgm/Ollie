@@ -1,11 +1,12 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import { StaggerParaOnScroll, StaggerWordOnScroll } from '../../../components/shared/StaggerOnScroll'
-import { useInView, motion, useAnimationControls, useAnimate } from 'framer-motion'
+import { useInView, motion, useAnimate } from 'framer-motion'
+import ToolTip from '../../../components/shared/ToolTip'
 
 const ImportanceOfDesign = () => {
     return (
         <>
-            <div className='max-w-[1000px] mx-auto px-4'>
+            <div className='max-w-[75%] mx-auto px-4'>
                 <div className='py-12'>
                     <StaggerParaOnScroll className="text-4xl leading-tight font-medium">
                         Here'll go a small paragraph that talking about why you need design and how we think about it. The list below is what exactly what we do in design for your company. Lorem ipsum dolor sit amet.
@@ -105,7 +106,7 @@ const TestParagraphs = [
 
 const ScrollTriggerImages = () => {
     const [scope, animate] = useAnimate()
-    const isInView = useInView(scope, { once: true, amount: 0.50 })
+    const isInView = useInView(scope, { once: true, amount: 0.35 })
     const sequence = [
         [
             '.middle',
@@ -124,7 +125,7 @@ const ScrollTriggerImages = () => {
         }
     }, [isInView, animate])
     return <>
-        <div ref={scope} className='grid grid-cols-3 items-center'>
+        <div ref={scope} className='grid grid-cols-3 items-center relative'>
             <div>
                 <motion.img initial={{ opacity: 0 }} src="/images/laptop-on-table.jpg" className='aspect-square object-cover w-3/4 first' alt="Laptop on table with clock" />
             </div>
@@ -133,6 +134,9 @@ const ScrollTriggerImages = () => {
             </div>
             <div>
                 <motion.img initial={{ opacity: 0 }} src="/images/mac-on-table.jpg" className='aspect-square object-cover w-3/4 ms-auto last' alt="People talking" />
+            </div>
+            <div className="absolute top-2/3 left-[60%]">
+                <ToolTip title="view full 👀" />
             </div>
         </div>
     </>

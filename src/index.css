@@ -12,4 +12,5 @@
 
 body {
   @apply bg-offWhite-900;
+  overflow-x: hidden;
 }

@@ -4,6 +4,7 @@ import Hero from './_components/Hero'
 import Loader from '../../components/shared/loader/Loader'
 import { AnimatePresence, LayoutGroup } from 'framer-motion'
 import ImportanceOfDesign from './_components/ImportanceOfDesign'
+import Services from './_components/Services'
 
 const Home = () => {
     const [loading, setLoading] = useState(true)
@@ -16,6 +17,7 @@ const Home = () => {
         <div className='max-w-[1500px] mx-auto space-y-8'>
             <Hero />
             <ImportanceOfDesign />
+            <Services />
         </div>
         {/* </>
             }
